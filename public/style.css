@@ -1,0 +1,179 @@
+* {
+  font-family: "Public Pixel", sans-serif;
+  font-size: 1rem;
+  color: var(--light-purple);
+  overflow-x: hidden;
+}
+
+:root {
+  --dark-purple: #987d9a;
+  --light-purple: #bb9ab1;
+  --peach: #eeceb9;
+  --yellow: #fefbd8;
+  --trans-grey: #987d9a5e;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--trans-grey);
+  border-radius: 10px;
+}
+
+main {
+  min-height: 100svh;
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark-purple);
+}
+
+header {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 6%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 300;
+}
+
+.navbar {
+  display: none;
+  gap: 20px;
+}
+
+#menu-icon {
+  display: block;
+}
+
+#cat-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#cat-1 {
+  height: clamp(100px, calc(25vw), 200px);
+}
+
+#cat-speech {
+  height: clamp(50px, calc(12.5vw), 100px);
+  padding: 10px;
+}
+
+.container {
+  background-color: var(--yellow);
+  border: 6px solid var(--light-purple);
+  padding: 20px 30px;
+  margin: 0% 5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  padding: 10px;
+  border: 5px solid var(--light-purple);
+  color: var(--dark-purple);
+  outline: none;
+}
+
+.btn {
+  background-color: var(--light-purple);
+  color: white;
+  border: 0;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background-color: var(--dark-purple);
+  cursor: pointer;
+}
+
+#write {
+  margin-bottom: 50px;
+}
+
+.post-ul {
+  background-color: white;
+  padding: 10px 20px;
+  border: 5px solid var(--light-purple);
+}
+
+.post-card {
+  background-color: white;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 50px;
+  padding: 0px 30px;
+  justify-content: center;
+}
+
+#copyright-container {
+  width: 100%;
+  position: absolute;
+  background-color: var(--light-purple);
+  padding: 1px 20px;
+}
+
+#copyright-txt {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 70px 20px 0px 30px;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    overflow-y: hidden;
+    justify-content: start;
+    gap: 60%;
+  }
+
+  #logo {
+    display: flex;
+    transform: rotate(-90deg);
+  }
+
+  #menu-icon {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row-reverse;
+    transform: rotate(-90deg);
+    gap: clamp(50px, calc(12.5vw), 100px);
+  }
+
+  main {
+    margin-top: 0;
+    margin-left: 50px;
+    padding: 20px;
+  }
+}
