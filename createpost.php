@@ -1,8 +1,37 @@
 <?php
+    require __DIR__ . "/vendor/autoload.php";
 
-    $mysqli = new mysqli("localhost", "root", "root", "meow", 3306);
-    $query = $mysqli->query("INSERT INTO posts (user_id, content) VALUES ('" . $_COOKIE['user_id'] . "', '" . $_POST['content'] . "')");
+    $env = parse_ini_file('.env');
+    $stripe_secret_key = $env["STRIPE_SECRET"];
 
-    header('Location: /index.php');
+    $cookie = $_COOKIE['user_id'];
+    $content = $_POST['content'];
+
+    if (!$content) {
+        header('Location: /index.php?error=MESSAGE CANNOT BE BLANK!');
+        exit;    
+    } 
+    \Stripe\Stripe::setApiKey($stripe_secret_key);
+
+    $checkout_session = \Stripe\Checkout\Session::create([
+            "mode" => "payment",
+            "success_url" => "http://localhost/success.php?session_id={CHECKOUT_SESSION_ID}&content={$content}",
+            "cancel_url" => "http://localhost/index.php?error=TRANSACTION FAILED",
+            "locale" => "auto",
+            "line_items" => [
+                [
+                    "quantity" => 1,
+                    "price_data" => [
+                        "currency" => "gbp",
+                        "unit_amount" => 100,
+                        "product_data" => [
+                            "name" => "post"
+                        ]
+                    ]
+                ]      
+            ]
+        ]);
+        
+    header("Location: " . $checkout_session->url);
 
 ?>

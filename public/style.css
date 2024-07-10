@@ -87,13 +87,25 @@ header {
   margin: 0% 5%;
 }
 
+.big-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-textarea {
+textarea,
+input {
   padding: 10px;
   border: 5px solid var(--light-purple);
   color: var(--dark-purple);
@@ -105,7 +117,7 @@ textarea {
   color: white;
   border: 0;
   padding: 8px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .btn:hover {

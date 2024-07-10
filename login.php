@@ -1,3 +1,11 @@
+<?php
+
+    if (isset($_COOKIE['user_id'])) {
+      header("Location: /index.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -40,29 +48,56 @@
           src="/public/Images/cat-sit-1.png"
           alt="Pixelated, ginger, sitting cat"
         />
-        <h1>Log In</h1>
+        <img
+          id="cat-speech"
+          src="/public/Images/login-textbox.png"
+          alt="Pixelated, white speech bubble for the cat saying 'Login'."
+        />
       </div>
 
-      <div class="container">
-        
-          <form action="/loguserin.php" method="POST">
-          <h2>Username</h2>
-            <textarea
-              rows="1"
-              type="text"
-              name="username"
-              placeholder="meow"
-            ></textarea>
-          <h2>Password</h2>
-            <textarea
-              rows="1"
-              type="password"
-              name="password"
-              placeholder="meow"
-            ></textarea>
-            <input class="btn" type="submit" value="Login" />
-          </form>
-          <span id="error"><?php echo $_GET['error']; ?></span>
+      <div class="big-container">
+        <div class="container">
+            <h1>Log In</h1>
+            <form action="/loguserin.php" method="POST">
+            <h2>Username</h2>
+              <input
+                rows="1"
+                type="text"
+                name="username"
+                placeholder="meow"
+              ></input>
+            <h2>Password</h2>
+              <input
+                rows="1"
+                type="password"
+                name="password"
+                placeholder="meow"
+              ></input>
+              <input class="btn" type="submit" value="Login" />
+            </form>
+            <span><?php echo $_GET['error']; ?></span>
+        </div>
+        <div class="container">
+            <h1>No Account? Sign Up!</h1>
+            <form action="/signuserup.php" method="POST">
+            <h2>Username</h2>
+              <input
+                rows="1"
+                type="text"
+                name="username"
+                placeholder="meow"
+              ></input>
+            <h2>Password</h2>
+              <input
+                rows="1"
+                type="password"
+                name="password"
+                placeholder="meow"
+              ></input>
+              <input class="btn" type="submit" value="Sign Up - £1" />
+            </form>
+            <span><?php echo $_GET['err']; ?></span>
+        </div>
       </div>
     </main>
     <footer>

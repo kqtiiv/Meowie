@@ -1,11 +1,23 @@
 <?php
+    // Start output buffering to prevent issues with header()
+    ob_start();
 
     if (!isset($_COOKIE['user_id'])) {
       header("Location: /login.php");
+      exit;
     }
 
     $mysqli = new mysqli("localhost", "root", "root", "meow", 3306);
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+    }
     $meow = $mysqli->query("SELECT users.username, posts.createdAt, posts.content FROM posts JOIN users ON posts.user_id = users.id");
+    if (!$meow) {
+        die("Query failed: " . $mysqli->error);
+    }
+
+    // End output buffering
+    ob_end_flush();
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +69,6 @@
           alt="Pixelated, white speech bubble for the cat saying 'Meow! Find posts below!'."
         />
       </div>
-
       <div class="container">
         <div id="write">
           <h1>Write</h1>
@@ -70,6 +81,16 @@
             ></textarea>
             <input class="btn" type="submit" value="Post - £1" />
           </form>
+          <span>
+            <?php 
+              if (isset($_GET['error'])) {
+                 echo htmlspecialchars($_GET['error']);
+              }
+              if (isset($_GET['res'])) {
+                  echo htmlspecialchars($_GET['res']);
+              } 
+            ?>
+          </span>
         </div>
         <div id="feed">
           <h1>Feed</h1>
@@ -78,15 +99,15 @@
               while ($post = $meow->fetch_assoc()) {
             ?>
                 <div class="post-card">
-                  <p class="content"><?php echo $post["content"]; ?></p>
-                  <p class="details"><?php echo $post["username"]; ?> @ <?php echo $post["createdAt"]; ?></p>
+                  <p class="content"><?php echo htmlspecialchars($post["content"]); ?></p>
+                  <p class="details"><?php echo htmlspecialchars($post["username"]); ?> @ <?php echo htmlspecialchars($post["createdAt"]); ?></p>
                 </div>
             <?php
               }
             ?>
           </ul>
         </div>
-        <form action="/logout.php" action="POST" >
+        <form action="/logout.php" >
             <input class="btn" type="submit" value="Logout" />
         </form>
       </div>

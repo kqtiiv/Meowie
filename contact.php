@@ -59,7 +59,7 @@
             ></textarea>
             <input class="btn" type="submit" value="Submit" />
           </form>
-          <span id="error"><?php echo $_GET['res']; ?></span>
+          <span><?php echo $_GET['res']; ?></span>
         </div>
       </div>
     </main>
