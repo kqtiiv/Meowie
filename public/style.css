@@ -29,6 +29,11 @@ main {
   margin-top: 50px;
 }
 
+p {
+  font: "Pixelify Sans", sans-serif;
+  line-height: 1.5;
+}
+
 a {
   text-decoration: none;
 }
@@ -100,7 +105,7 @@ textarea {
   color: white;
   border: 0;
   padding: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -109,7 +114,7 @@ textarea {
 }
 
 #write {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .post-ul {
@@ -120,6 +125,7 @@ textarea {
 
 .post-card {
   background-color: white;
+  border-bottom: 1px solid var(--dark-purple);
 }
 
 .footer {

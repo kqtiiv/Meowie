@@ -17,6 +17,9 @@
     <title>Meowie</title>
     <link href="/public/style.css" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -51,7 +54,7 @@
         <img
           id="cat-speech"
           src="/public/Images/cat-textbox.png"
-          alt="Pixelated, white speech bubble for the cat"
+          alt="Pixelated, white speech bubble for the cat saying 'Meow! Find posts below!'."
         />
       </div>
 
@@ -65,7 +68,7 @@
               name="content"
               placeholder="Text"
             ></textarea>
-            <input class="btn" type="submit" value="Post" />
+            <input class="btn" type="submit" value="Post - £1" />
           </form>
         </div>
         <div id="feed">

@@ -7,6 +7,8 @@
     <title>Meowie</title>
     <link href="/public/style.css" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -38,12 +40,31 @@
           src="/public/Images/cat-sit-1.png"
           alt="Pixelated, ginger, sitting cat"
         />
-        <h1>About</h1>
+        <img
+          id="cat-speech"
+          src="/public/Images/about-textbox.png"
+          alt="Pixelated, white speech bubble for the cat saying 'About'."
+        />
       </div>
 
       <div class="container">
         <div>
+          <h2>The Website</h2>
           <p>Meow! Welcome to my website! Here, you can talk to other cats - just log in and click the Meowie button in the navbar!</p>
+          <h2>The developer</h2>
+          <p>
+            My name is Katie - also known as kqtiiv. I am a computer science student, who enjoys web development, game development, 
+            cryptography and theoroetical computing. My goal is to study CS at University and work in the sector in the future. 
+            Evidently, I also like cats, and they would greatly appreciate any form of donation to aid in web hosting and game hosting.
+          </p>
+          <h2>I want more!</h2>
+          <p>
+            If you like this website, I'd be incredibly grateful if you checked out my other creations and social media (linked in the footer).
+          </p>
+          <h2>Meow appreciates you :)</h2>
+          <p>
+            Thank you for taking the time to read this with the most unreadable (but cute) font and have a have a meow-velous day!
+          </p>
         </div>
       </div>
     </main>

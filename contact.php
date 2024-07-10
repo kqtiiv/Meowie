@@ -7,6 +7,8 @@
     <title>Meowie</title>
     <link href="/public/style.css" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -38,21 +40,26 @@
           src="/public/Images/cat-sit-1.png"
           alt="Pixelated, ginger, sitting cat"
         />
-        <h1>Contact</h1>
+        <img
+          id="cat-speech"
+          src="/public/Images/contact-textbox.png"
+          alt="Pixelated, white speech bubble for the cat saying 'Contact'."
+        />
       </div>
 
       <div class="container">
         <div id="write">
           <h1>Write</h1>
-          <form action="/contact.php" method="POST">
+          <form action="/contactresponse.php" method="POST">
             <textarea
-              rows="10"
+              rows="15"
               type="text"
               name="content"
               placeholder="Text"
             ></textarea>
             <input class="btn" type="submit" value="Submit" />
           </form>
+          <span id="error"><?php echo $_GET['res']; ?></span>
         </div>
       </div>
     </main>
