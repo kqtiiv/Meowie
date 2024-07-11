@@ -34,7 +34,7 @@ $sql_password = $env["SQL_PASSWORD"];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meowie</title>
-    <link rel="icon" href="/public/images/cat_2.png" >
+    <link rel="icon" href="/public/images/cat_2.png" type="image/x-icon" >
     <link href="/public/style.css" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
