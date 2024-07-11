@@ -177,6 +177,24 @@ input {
   text-align: center;
 }
 
+.err-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#err-sign {
+  font: "Pixelify Sans", sans-serif;
+  font-size: 5rem;
+}
+
+#black-cat {
+  height: clamp(100px, calc(50vw), 200px);
+  width: auto;
+}
+
 @media only screen and (min-width: 768px) {
   header {
     position: fixed;
