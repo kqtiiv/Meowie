@@ -2,6 +2,7 @@
 
     if (isset($_COOKIE['user_id'])) {
       header("Location: /index.php");
+      exit;
     }
 
 ?>
@@ -75,7 +76,7 @@
               ></input>
               <input class="btn" type="submit" value="Login" />
             </form>
-            <span><?php echo $_GET['error']; ?></span>
+            <span><?php echo htmlspecialchars($_GET['error']); ?></span>
         </div>
         <div class="container">
             <h1>No Account? Sign Up!</h1>
@@ -96,7 +97,7 @@
               ></input>
               <input class="btn" type="submit" value="Sign Up - £1" />
             </form>
-            <span><?php echo $_GET['err']; ?></span>
+            <span><?php echo htmlspecialchars($_GET['err']); ?></span>
         </div>
       </div>
     </main>

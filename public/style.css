@@ -65,6 +65,10 @@ header {
   display: block;
 }
 
+#menu-icon:hover {
+  cursor: pointer;
+}
+
 #cat-container {
   display: flex;
   justify-content: center;

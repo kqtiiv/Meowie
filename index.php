@@ -40,7 +40,7 @@
         <a href="/about.php">About</a>
         <a href="/contact.php">Contact</a>
       </nav>
-      <div id="menu-icon">
+      <div id="menu-icon" onclick="toggleMenu()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -122,4 +122,10 @@
       </div>
     </footer>
   </body>
+  <script>
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
 </html>

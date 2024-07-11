@@ -1,7 +1,4 @@
 <?php
-
-    $mysqli = new mysqli("localhost", "root", "root", "meow", 3306);
-
     $content = $_POST['content'];
 
     if ($content == "meow") {
