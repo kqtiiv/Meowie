@@ -1,5 +1,12 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "root", "meow", 3306);
+$env = parse_ini_file('.env');
+$host = $env["HOST"];
+$db = $env["DB_NAME"];
+$sql_username = $env["SQL_USERNAME"];
+$sql_password = $env["SQL_PASSWORD"];
+
+
+$mysqli = new mysqli($host, $sql_username, $sql_password, $db, 3306);
 
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);

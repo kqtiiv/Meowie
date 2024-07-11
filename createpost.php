@@ -15,8 +15,8 @@
 
     $checkout_session = \Stripe\Checkout\Session::create([
             "mode" => "payment",
-            "success_url" => "http://localhost/success.php?session_id={CHECKOUT_SESSION_ID}&content={$content}",
-            "cancel_url" => "http://localhost/index.php?error=TRANSACTION FAILED",
+            "success_url" => "http://meowie.lovestoblog.com/success.php?session_id={CHECKOUT_SESSION_ID}&content={$content}",
+            "cancel_url" => "http://meowie.lovestoblog.com/index.php?error=TRANSACTION FAILED",
             "locale" => "auto",
             "line_items" => [
                 [

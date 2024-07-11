@@ -4,7 +4,13 @@ require __DIR__ . "/vendor/autoload.php";
 $env = parse_ini_file('.env');
 $stripe_secret_key = $env["STRIPE_SECRET"];
 
-$mysqli = new mysqli("localhost", "root", "root", "meow", 3306);
+$host = $env["HOST"];
+$db = $env["DB_NAME"];
+$sql_username = $env["SQL_USERNAME"];
+$sql_password = $env["SQL_PASSWORD"];
+
+
+$mysqli = new mysqli($host, $sql_username, $sql_password, $db, 3306);
 
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
@@ -42,8 +48,8 @@ if ($result->num_rows == 0) {
 
     $checkout_session = \Stripe\Checkout\Session::create([
             "mode" => "payment",
-            "success_url" => "http://localhost/success2.php?session_id={CHECKOUT_SESSION_ID}&username={$username}&password={$hashed_password}",
-            "cancel_url" => "http://localhost/login.php?err=TRANSACTION FAILED",
+            "success_url" => "http://meowie.lovestoblog.com/success2.php?session_id={CHECKOUT_SESSION_ID}&username={$username}&password={$hashed_password}",
+            "cancel_url" => "http://meowie.lovestoblog.com/login.php?err=TRANSACTION FAILED",
             "locale" => "auto",
             "line_items" => [
                 [
