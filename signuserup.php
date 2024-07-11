@@ -58,7 +58,7 @@ if ($result->num_rows == 0) {
                         "currency" => "gbp",
                         "unit_amount" => 100,
                         "product_data" => [
-                            "name" => "post"
+                            "name" => "Sign Up"
                         ]
                     ]
                 ]      

@@ -25,7 +25,7 @@
                         "currency" => "gbp",
                         "unit_amount" => 100,
                         "product_data" => [
-                            "name" => "post"
+                            "name" => "Post"
                         ]
                     ]
                 ]      
