@@ -47,18 +47,31 @@ header {
   box-sizing: border-box;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   padding: 10px 6%;
   background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 300;
 }
 
+.small-screen-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#logo {
+  margin-right: auto;
+}
+
 .navbar {
-  display: none;
+  display: flex;
   gap: 20px;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  display: none;
 }
 
 #menu-icon {
@@ -154,8 +167,6 @@ input {
 }
 
 #copyright-container {
-  width: 100%;
-  position: absolute;
   background-color: var(--light-purple);
   padding: 1px 20px;
 }
@@ -166,20 +177,25 @@ input {
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   header {
-    padding: 70px 20px 0px 30px;
-    flex-direction: column;
-    height: 100%;
-    width: 0;
-    overflow-y: hidden;
-    justify-content: start;
-    gap: 60%;
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vh;
+    height: 5rem;
+    align-items: center;
+    transform-origin: left top;
+    transform: rotate(-90deg) translateX(-100%);
+    padding: 0px 50px;
+  }
+
+  .small-screen-icons {
+    margin-left: auto;
   }
 
   #logo {
-    display: flex;
-    transform: rotate(-90deg);
+    padding-right: 50px;
   }
 
   #menu-icon {
@@ -187,10 +203,11 @@ input {
   }
 
   .navbar {
-    display: flex;
-    flex-direction: row-reverse;
-    transform: rotate(-90deg);
-    gap: clamp(50px, calc(12.5vw), 100px);
+    display: inline-block;
+  }
+
+  .navbar .about {
+    margin-right: 5%;
   }
 
   main {
