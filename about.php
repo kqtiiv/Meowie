@@ -92,8 +92,9 @@
         <div class="container">
             <h2>Donate</h2>
             <p>Meowie thanks you for your kindness!</p>
-            <button href="https://buymeacoffee.com/kqtiiv" class="btn">Redirect me to donate page</button>
-           
+            <form action="https://buymeacoffee.com/kqtiiv" >
+                <input class="btn" type="submit" value="Redirect me to donate page" />
+            </form>
        </div>
       </div>
     </main>
