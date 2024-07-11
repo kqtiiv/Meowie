@@ -128,7 +128,7 @@ $sql_password = $env["SQL_PASSWORD"];
         <p>Meow. Nothing to see here.</p>
       </div>
       <div id="copyright-container">
-        <p id="copyright-txt">Copyright © 2024 kqtiiv</p>
+        <p id="copyright-txt">Copyright © <?php echo date("Y") ?> kqtiiv</p>
       </div>
     </footer>
   </body>
