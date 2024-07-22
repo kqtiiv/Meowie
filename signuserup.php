@@ -24,6 +24,16 @@ if (empty($username) || empty($password)) {
     exit;
 }
 
+if (strlen($password) < 8) {
+    header('Location: login.php?err=PASSWORD MUST BE AT LEAST 8 CHARACTERS');
+    exit;
+}
+
+if (!(preg_match('/[A-Z]/', $password) && preg_match('/[0-9]/', $password))) {
+    header('Location: login.php?err=PASSWORD MUST CONTAIN A CAPTIAL LETTER AND NUMBER');
+    exit;
+}
+
 if (preg_match("/[<|>]/", $username) || preg_match("/[<|>]/", $password)) {
     header('Location: login.php?err=DO NOT MESS WITH MEOWIE! I AM ALWAYS WATCHING!!!');
     exit;
