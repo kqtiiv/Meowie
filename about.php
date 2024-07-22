@@ -58,7 +58,7 @@
             <p>
               My name is Katie - also known as kqtiiv. I am a computer science student, who enjoys web development, game development, 
               cryptography and theoretical computing. My current goal is to study CS at University, so I can further expand and develop 
-              my knowledge for the subject through lectures and independent research. 
+              my knowledge for the subject through lectures and independent research. <br />
               Evidently, I also like cats, and they would greatly appreciate any form of donation to aid in web hosting.
             </p>
             <h2>I want more!</h2>
