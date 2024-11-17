@@ -5,6 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meowie</title>
+    <meta name="description" content="A secure and user-friendly platform for cat enthusiasts. Sign up to join the community.">
+    <meta name="keywords" content="cats, blogging, community, login, pet lovers, meowie, kqtiiv, donate, computer science, web development, game development, UI, UX">
+    <meta name="author" content="kqtiiv">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Meowie">
+    <meta property="og:description" content="Join the purrfect community for cat lovers!">
+    <meta property="og:image" content="https://meowie.lovestoblog.com/images/cat_2.png">
+    <meta property="og:url" content="https://meowie.lovestoblog.com/about.php">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_UK">
     <link rel="icon" href="favicon.ico" type="image/x-icon" >
     <link href="/public/style.css" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet" />
