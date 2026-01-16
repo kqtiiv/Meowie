@@ -1,5 +1,4 @@
 <?php
-    // Start output buffering to prevent issues with header()
     ob_start();
 
     if (!isset($_COOKIE['user_id'])) {
@@ -23,7 +22,6 @@ $sql_password = $env["SQL_PASSWORD"];
         die("Query failed: " . $mysqli->error);
     }
 
-    // End output buffering
     ob_end_flush();
 ?>
 
@@ -150,3 +148,4 @@ $sql_password = $env["SQL_PASSWORD"];
     }
   </script>
 </html>
+
